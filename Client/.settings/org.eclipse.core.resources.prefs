@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/fr/uge/psw/clientws/Client.java=UTF-8
+encoding//src/fr/uge/psw/clientws/ClientService.java=UTF-8
+encoding//src/fr/uge/psw/clientws/ClientServiceLocator.java=UTF-8
+encoding//src/fr/uge/psw/clientws/ClientSoapBindingStub.java=UTF-8
+encoding//src/fr/uge/psw/ifcarsService/IfCarService.java=UTF-8
+encoding//src/fr/uge/psw/ifcarsService/IfCarServiceService.java=UTF-8
+encoding//src/fr/uge/psw/ifcarsService/IfCarServiceServiceLocator.java=UTF-8
+encoding//src/fr/uge/psw/ifcarsService/IfCarServiceSoapBindingStub.java=UTF-8

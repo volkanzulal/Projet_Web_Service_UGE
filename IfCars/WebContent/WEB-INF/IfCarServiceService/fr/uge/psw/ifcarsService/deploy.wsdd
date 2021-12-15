@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from IfCarServiceService WSDL service -->
+
+  <service name="IfCarService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ifcarsService.psw.uge.fr"/>
+      <parameter name="wsdlServiceElement" value="IfCarServiceService"/>
+      <parameter name="schemaQualified" value="http://ifcarsService.psw.uge.fr"/>
+      <parameter name="wsdlServicePort" value="IfCarService"/>
+      <parameter name="className" value="fr.uge.psw.ifcarsService.IfCarService"/>
+      <parameter name="wsdlPortType" value="IfCarService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" xmlns:retNS="http://ifcarsService.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCurrency" qname="operNS:getCurrency" returnQName="retNS:getCurrencyReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:countryCode" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" xmlns:retNS="http://ifcarsService.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCompteValeur" qname="operNS:getCompteValeur" returnQName="retNS:getCompteValeurReturn" returnType="rtns:double" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" xmlns:retNS="http://ifcarsService.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="verificationAchat" qname="operNS:verificationAchat" returnQName="retNS:verificationAchatReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:prix" type="tns:double"/>
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:countryCode" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" name="resetCompte" qname="operNS:resetCompte" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" name="initCompte" qname="operNS:initCompte" soapAction="">
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:montant" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" xmlns:retNS="http://ifcarsService.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="carDispo" qname="operNS:carDispo" returnQName="retNS:carDispoReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://ifcarsService.psw.uge.fr" xmlns:retNS="http://ifcarsService.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPrix" qname="operNS:getPrix" returnQName="retNS:getPrixReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://ifcarsService.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="getCurrency carDispo resetCompte getPrix initCompte getCompteValeur verificationAchat"/>
+
+  </service>
+</deployment>

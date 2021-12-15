@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ifcarsService.psw.uge.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ifcarsService.psw.uge.fr" xmlns:intf="http://ifcarsService.psw.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ifcarsService.psw.uge.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getID">
+    <complexType/>
+   </element>
+   <element name="getIDResponse">
+    <complexType>
+     <sequence>
+      <element name="getIDReturn" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMarque">
+    <complexType/>
+   </element>
+   <element name="getMarqueResponse">
+    <complexType>
+     <sequence>
+      <element name="getMarqueReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrix">
+    <complexType/>
+   </element>
+   <element name="getPrixResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrixReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNote">
+    <complexType/>
+   </element>
+   <element name="getNoteResponse">
+    <complexType>
+     <sequence>
+      <element name="getNoteReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEtat">
+    <complexType/>
+   </element>
+   <element name="getEtatResponse">
+    <complexType>
+     <sequence>
+      <element name="getEtatReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIsRent">
+    <complexType>
+     <sequence>
+      <element name="rent" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIsRentResponse">
+    <complexType/>
+   </element>
+   <element name="setEtat">
+    <complexType>
+     <sequence>
+      <element name="etat" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEtatResponse">
+    <complexType/>
+   </element>
+   <element name="setNote">
+    <complexType>
+     <sequence>
+      <element name="note" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNoteResponse">
+    <complexType/>
+   </element>
+   <element name="getIsRent">
+    <complexType/>
+   </element>
+   <element name="getIsRentResponse">
+    <complexType>
+     <sequence>
+      <element name="getIsRentReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInformation">
+    <complexType/>
+   </element>
+   <element name="getInformationResponse">
+    <complexType>
+     <sequence>
+      <element name="getInformationReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNblocation">
+    <complexType/>
+   </element>
+   <element name="getNblocationResponse">
+    <complexType>
+     <sequence>
+      <element name="getNblocationReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNblocation">
+    <complexType>
+     <sequence>
+      <element name="n" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNblocationResponse">
+    <complexType/>
+   </element>
+   <element name="getModel">
+    <complexType/>
+   </element>
+   <element name="getModelResponse">
+    <complexType>
+     <sequence>
+      <element name="getModelReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setIsRentResponse">
+
+      <wsdl:part element="impl:setIsRentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEtatRequest">
+
+      <wsdl:part element="impl:getEtat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNoteRequest">
+
+      <wsdl:part element="impl:setNote" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInformationResponse">
+
+      <wsdl:part element="impl:getInformationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNoteResponse">
+
+      <wsdl:part element="impl:getNoteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNoteResponse">
+
+      <wsdl:part element="impl:setNoteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNblocationResponse">
+
+      <wsdl:part element="impl:getNblocationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNblocationRequest">
+
+      <wsdl:part element="impl:getNblocation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIsRentRequest">
+
+      <wsdl:part element="impl:getIsRent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIDRequest">
+
+      <wsdl:part element="impl:getID" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrixResponse">
+
+      <wsdl:part element="impl:getPrixResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIDResponse">
+
+      <wsdl:part element="impl:getIDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMarqueRequest">
+
+      <wsdl:part element="impl:getMarque" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrixRequest">
+
+      <wsdl:part element="impl:getPrix" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNoteRequest">
+
+      <wsdl:part element="impl:getNote" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEtatResponse">
+
+      <wsdl:part element="impl:setEtatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMarqueResponse">
+
+      <wsdl:part element="impl:getMarqueResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getModelRequest">
+
+      <wsdl:part element="impl:getModel" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEtatResponse">
+
+      <wsdl:part element="impl:getEtatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNblocationRequest">
+
+      <wsdl:part element="impl:setNblocation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEtatRequest">
+
+      <wsdl:part element="impl:setEtat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIsRentResponse">
+
+      <wsdl:part element="impl:getIsRentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getModelResponse">
+
+      <wsdl:part element="impl:getModelResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInformationRequest">
+
+      <wsdl:part element="impl:getInformation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIsRentRequest">
+
+      <wsdl:part element="impl:setIsRent" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNblocationResponse">
+
+      <wsdl:part element="impl:setNblocationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Car">
+
+      <wsdl:operation name="getID">
+
+         <wsdl:input message="impl:getIDRequest" name="getIDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIDResponse" name="getIDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMarque">
+
+         <wsdl:input message="impl:getMarqueRequest" name="getMarqueRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMarqueResponse" name="getMarqueResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrix">
+
+         <wsdl:input message="impl:getPrixRequest" name="getPrixRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrixResponse" name="getPrixResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNote">
+
+         <wsdl:input message="impl:getNoteRequest" name="getNoteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNoteResponse" name="getNoteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEtat">
+
+         <wsdl:input message="impl:getEtatRequest" name="getEtatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEtatResponse" name="getEtatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setIsRent">
+
+         <wsdl:input message="impl:setIsRentRequest" name="setIsRentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setIsRentResponse" name="setIsRentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEtat">
+
+         <wsdl:input message="impl:setEtatRequest" name="setEtatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setEtatResponse" name="setEtatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNote">
+
+         <wsdl:input message="impl:setNoteRequest" name="setNoteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNoteResponse" name="setNoteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIsRent">
+
+         <wsdl:input message="impl:getIsRentRequest" name="getIsRentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIsRentResponse" name="getIsRentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInformation">
+
+         <wsdl:input message="impl:getInformationRequest" name="getInformationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getInformationResponse" name="getInformationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNblocation">
+
+         <wsdl:input message="impl:getNblocationRequest" name="getNblocationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNblocationResponse" name="getNblocationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNblocation">
+
+         <wsdl:input message="impl:setNblocationRequest" name="setNblocationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNblocationResponse" name="setNblocationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getModel">
+
+         <wsdl:input message="impl:getModelRequest" name="getModelRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getModelResponse" name="getModelResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CarSoapBinding" type="impl:Car">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMarque">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMarqueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMarqueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrix">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrixRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrixResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNoteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNoteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEtat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEtatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEtatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setIsRent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setIsRentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setIsRentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEtat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setEtatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setEtatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNoteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNoteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIsRent">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIsRentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIsRentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInformation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInformationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInformationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNblocation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNblocationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNblocationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNblocation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNblocationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNblocationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getModel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getModelRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getModelResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CarService">
+
+      <wsdl:port binding="impl:CarSoapBinding" name="Car">
+
+         <wsdlsoap:address location="http://localhost:8080/IfCars/services/Car"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

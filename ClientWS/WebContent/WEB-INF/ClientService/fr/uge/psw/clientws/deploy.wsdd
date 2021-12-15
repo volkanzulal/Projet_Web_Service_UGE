@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ClientService WSDL service -->
+
+  <service name="Client" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://clientws.psw.uge.fr"/>
+      <parameter name="wsdlServiceElement" value="ClientService"/>
+      <parameter name="schemaQualified" value="http://clientws.psw.uge.fr"/>
+      <parameter name="wsdlServicePort" value="Client"/>
+      <parameter name="className" value="fr.uge.psw.clientws.Client"/>
+      <parameter name="wsdlPortType" value="Client"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" xmlns:retNS="http://clientws.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getFirstName" qname="operNS:getFirstName" returnQName="retNS:getFirstNameReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" xmlns:retNS="http://clientws.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLastName" qname="operNS:getLastName" returnQName="retNS:getLastNameReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" xmlns:retNS="http://clientws.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCountryCode" qname="operNS:getCountryCode" returnQName="retNS:getCountryCodeReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" name="setFirstName" qname="operNS:setFirstName" soapAction="">
+        <parameter xmlns:pns="http://clientws.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" name="setLastName" qname="operNS:setLastName" soapAction="">
+        <parameter xmlns:pns="http://clientws.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" name="setCodeCountry" qname="operNS:setCodeCountry" soapAction="">
+        <parameter xmlns:pns="http://clientws.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:codeCountry" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" xmlns:retNS="http://clientws.psw.uge.fr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCompte" qname="operNS:getCompte" returnQName="retNS:getCompteReturn" returnType="rtns:double" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://clientws.psw.uge.fr" name="setCompte" qname="operNS:setCompte" soapAction="">
+        <parameter xmlns:pns="http://clientws.psw.uge.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:montant" type="tns:double"/>
+      </operation>
+      <parameter name="allowedMethods" value="getCompte getCountryCode setLastName setCodeCountry setFirstName setCompte getFirstName getLastName"/>
+
+  </service>
+</deployment>

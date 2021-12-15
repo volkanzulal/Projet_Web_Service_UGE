@@ -1,0 +1,112 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="/Users/volkanzulal/Projet_Web_Service/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/IfCars/WEB-INF/attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="Car" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getID" qname="ns1:getID" returnQName="ns1:getIDReturn" returnType="xsd:long" soapAction="" xmlns:ns1="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:operation name="getMarque" qname="ns2:getMarque" returnQName="ns2:getMarqueReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getPrix" qname="ns3:getPrix" returnQName="ns3:getPrixReturn" returnType="xsd:double" soapAction="" xmlns:ns3="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getNote" qname="ns4:getNote" returnQName="ns4:getNoteReturn" returnType="xsd:int" soapAction="" xmlns:ns4="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getEtat" qname="ns5:getEtat" returnQName="ns5:getEtatReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setIsRent" qname="ns6:setIsRent" soapAction="" xmlns:ns6="http://ifcarsService.psw.uge.fr">
+   <ns1:parameter qname="ns6:rent" type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setEtat" qname="ns7:setEtat" soapAction="" xmlns:ns7="http://ifcarsService.psw.uge.fr">
+   <ns1:parameter qname="ns7:etat" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="setNote" qname="ns8:setNote" soapAction="" xmlns:ns8="http://ifcarsService.psw.uge.fr">
+   <ns1:parameter qname="ns8:note" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getIsRent" qname="ns9:getIsRent" returnQName="ns9:getIsRentReturn" returnType="xsd:boolean" soapAction="" xmlns:ns9="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getInformation" qname="ns10:getInformation" returnQName="ns10:getInformationReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getNblocation" qname="ns11:getNblocation" returnQName="ns11:getNblocationReturn" returnType="xsd:int" soapAction="" xmlns:ns11="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setNblocation" qname="ns12:setNblocation" soapAction="" xmlns:ns12="http://ifcarsService.psw.uge.fr">
+   <ns1:parameter qname="ns12:n" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getModel" qname="ns13:getModel" returnQName="ns13:getModelReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="getModel getPrix getIsRent getEtat getID getNote setEtat getNblocation setIsRent setNote getMarque getInformation setNblocation"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Car"/>
+  <ns1:parameter name="className" value="fr.uge.psw.ifcarsService.Car"/>
+  <ns1:parameter name="wsdlServicePort" value="Car"/>
+  <ns1:parameter name="schemaQualified" value="http://ifcarsService.psw.uge.fr"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://ifcarsService.psw.uge.fr"/>
+  <ns1:parameter name="wsdlServiceElement" value="CarService"/>
+ </ns1:service>
+ <ns1:service name="IfCarService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getCurrency" qname="ns14:getCurrency" returnQName="ns14:getCurrencyReturn" returnType="xsd:string" soapAction="" xmlns:ns14="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:countryCode" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getCompteValeur" qname="ns15:getCompteValeur" returnQName="ns15:getCompteValeurReturn" returnType="xsd:double" soapAction="" xmlns:ns15="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="verificationAchat" qname="ns16:verificationAchat" returnQName="ns16:verificationAchatReturn" returnType="xsd:double" soapAction="" xmlns:ns16="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns16:prix" type="xsd:double"/>
+   <ns1:parameter qname="ns16:id" type="xsd:int"/>
+   <ns1:parameter qname="ns16:countryCode" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="resetCompte" qname="ns17:resetCompte" soapAction="" xmlns:ns17="http://ifcarsService.psw.uge.fr"/>
+  <ns1:operation name="initCompte" qname="ns18:initCompte" soapAction="" xmlns:ns18="http://ifcarsService.psw.uge.fr">
+   <ns1:parameter qname="ns18:montant" type="xsd:double" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="carDispo" qname="ns19:carDispo" returnQName="ns19:carDispoReturn" returnType="xsd:boolean" soapAction="" xmlns:ns19="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns19:id" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="getPrix" qname="ns20:getPrix" returnQName="ns20:getPrixReturn" returnType="xsd:double" soapAction="" xmlns:ns20="http://ifcarsService.psw.uge.fr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns20:id" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getCurrency carDispo resetCompte getPrix initCompte getCompteValeur verificationAchat"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="IfCarService"/>
+  <ns1:parameter name="className" value="fr.uge.psw.ifcarsService.IfCarService"/>
+  <ns1:parameter name="wsdlServicePort" value="IfCarService"/>
+  <ns1:parameter name="schemaQualified" value="http://ifcarsService.psw.uge.fr"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://ifcarsService.psw.uge.fr"/>
+  <ns1:parameter name="wsdlServiceElement" value="IfCarServiceService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

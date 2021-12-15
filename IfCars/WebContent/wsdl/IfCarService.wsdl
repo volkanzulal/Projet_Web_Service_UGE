@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ifcarsService.psw.uge.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ifcarsService.psw.uge.fr" xmlns:intf="http://ifcarsService.psw.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ifcarsService.psw.uge.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getCurrency">
+    <complexType>
+     <sequence>
+      <element name="countryCode" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCurrencyResponse">
+    <complexType>
+     <sequence>
+      <element name="getCurrencyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCompteValeur">
+    <complexType/>
+   </element>
+   <element name="getCompteValeurResponse">
+    <complexType>
+     <sequence>
+      <element name="getCompteValeurReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificationAchat">
+    <complexType>
+     <sequence>
+      <element name="prix" type="xsd:double"/>
+      <element name="id" type="xsd:int"/>
+      <element name="countryCode" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificationAchatResponse">
+    <complexType>
+     <sequence>
+      <element name="verificationAchatReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="resetCompte">
+    <complexType/>
+   </element>
+   <element name="resetCompteResponse">
+    <complexType/>
+   </element>
+   <element name="initCompte">
+    <complexType>
+     <sequence>
+      <element name="montant" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="initCompteResponse">
+    <complexType/>
+   </element>
+   <element name="carDispo">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="carDispoResponse">
+    <complexType>
+     <sequence>
+      <element name="carDispoReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrix">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrixResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrixReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="resetCompteRequest">
+
+      <wsdl:part element="impl:resetCompte" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="carDispoRequest">
+
+      <wsdl:part element="impl:carDispo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyRequest">
+
+      <wsdl:part element="impl:getCurrency" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetCompteResponse">
+
+      <wsdl:part element="impl:resetCompteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="initCompteResponse">
+
+      <wsdl:part element="impl:initCompteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="carDispoResponse">
+
+      <wsdl:part element="impl:carDispoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrixResponse">
+
+      <wsdl:part element="impl:getPrixResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificationAchatResponse">
+
+      <wsdl:part element="impl:verificationAchatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCompteValeurResponse">
+
+      <wsdl:part element="impl:getCompteValeurResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificationAchatRequest">
+
+      <wsdl:part element="impl:verificationAchat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrixRequest">
+
+      <wsdl:part element="impl:getPrix" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="initCompteRequest">
+
+      <wsdl:part element="impl:initCompte" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCompteValeurRequest">
+
+      <wsdl:part element="impl:getCompteValeur" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyResponse">
+
+      <wsdl:part element="impl:getCurrencyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IfCarService">
+
+      <wsdl:operation name="getCurrency">
+
+         <wsdl:input message="impl:getCurrencyRequest" name="getCurrencyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCurrencyResponse" name="getCurrencyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCompteValeur">
+
+         <wsdl:input message="impl:getCompteValeurRequest" name="getCompteValeurRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCompteValeurResponse" name="getCompteValeurResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificationAchat">
+
+         <wsdl:input message="impl:verificationAchatRequest" name="verificationAchatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verificationAchatResponse" name="verificationAchatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetCompte">
+
+         <wsdl:input message="impl:resetCompteRequest" name="resetCompteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:resetCompteResponse" name="resetCompteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="initCompte">
+
+         <wsdl:input message="impl:initCompteRequest" name="initCompteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:initCompteResponse" name="initCompteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="carDispo">
+
+         <wsdl:input message="impl:carDispoRequest" name="carDispoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:carDispoResponse" name="carDispoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrix">
+
+         <wsdl:input message="impl:getPrixRequest" name="getPrixRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrixResponse" name="getPrixResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IfCarServiceSoapBinding" type="impl:IfCarService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCurrency">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCurrencyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCurrencyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCompteValeur">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCompteValeurRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCompteValeurResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificationAchat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verificationAchatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verificationAchatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="resetCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="resetCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="initCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="initCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="initCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="carDispo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="carDispoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="carDispoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrix">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrixRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrixResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IfCarServiceService">
+
+      <wsdl:port binding="impl:IfCarServiceSoapBinding" name="IfCarService">
+
+         <wsdlsoap:address location="http://localhost:8080/IfCars/services/IfCarService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

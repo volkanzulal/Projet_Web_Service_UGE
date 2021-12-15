@@ -1,0 +1,56 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CarService WSDL service -->
+
+  <service name="Car" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ifcarsService.psw.uge.fr"/>
+      <parameter name="wsdlServiceElement" value="CarService"/>
+      <parameter name="schemaQualified" value="http://ifcarsService.psw.uge.fr"/>
+      <parameter name="wsdlServicePort" value="Car"/>
+      <parameter name="className" value="fr.uge.psw.ifcarsService.CarSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Car"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getID" qname="operNS:getID" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getIDReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:long" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getMarque" qname="operNS:getMarque" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getMarqueReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPrix" qname="operNS:getPrix" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getPrixReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getNote" qname="operNS:getNote" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getNoteReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getEtat" qname="operNS:getEtat" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getEtatReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setIsRent" qname="operNS:setIsRent" xmlns:operNS="http://ifcarsService.psw.uge.fr" soapAction="" >
+        <parameter qname="pns:rent" xmlns:pns="http://ifcarsService.psw.uge.fr" type="tns:boolean" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setEtat" qname="operNS:setEtat" xmlns:operNS="http://ifcarsService.psw.uge.fr" soapAction="" >
+        <parameter qname="pns:etat" xmlns:pns="http://ifcarsService.psw.uge.fr" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setNote" qname="operNS:setNote" xmlns:operNS="http://ifcarsService.psw.uge.fr" soapAction="" >
+        <parameter qname="pns:note" xmlns:pns="http://ifcarsService.psw.uge.fr" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getIsRent" qname="operNS:getIsRent" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getIsRentReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getInformation" qname="operNS:getInformation" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getInformationReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getNblocation" qname="operNS:getNblocation" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getNblocationReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setNblocation" qname="operNS:setNblocation" xmlns:operNS="http://ifcarsService.psw.uge.fr" soapAction="" >
+        <parameter qname="pns:n" xmlns:pns="http://ifcarsService.psw.uge.fr" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getModel" qname="operNS:getModel" xmlns:operNS="http://ifcarsService.psw.uge.fr" returnQName="retNS:getModelReturn" xmlns:retNS="http://ifcarsService.psw.uge.fr" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getModel getPrix getIsRent getEtat getID getNote setEtat getNblocation setIsRent setNote getMarque getInformation setNblocation"/>
+
+  </service>
+</deployment>

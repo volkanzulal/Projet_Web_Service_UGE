@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://clientws.psw.uge.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://clientws.psw.uge.fr" xmlns:intf="http://clientws.psw.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://clientws.psw.uge.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getFirstName">
+    <complexType/>
+   </element>
+   <element name="getFirstNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getFirstNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLastName">
+    <complexType/>
+   </element>
+   <element name="getLastNameResponse">
+    <complexType>
+     <sequence>
+      <element name="getLastNameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCountryCode">
+    <complexType/>
+   </element>
+   <element name="getCountryCodeResponse">
+    <complexType>
+     <sequence>
+      <element name="getCountryCodeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFirstName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setFirstNameResponse">
+    <complexType/>
+   </element>
+   <element name="setLastName">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setLastNameResponse">
+    <complexType/>
+   </element>
+   <element name="setCodeCountry">
+    <complexType>
+     <sequence>
+      <element name="codeCountry" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCodeCountryResponse">
+    <complexType/>
+   </element>
+   <element name="getCompte">
+    <complexType/>
+   </element>
+   <element name="getCompteResponse">
+    <complexType>
+     <sequence>
+      <element name="getCompteReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCompte">
+    <complexType>
+     <sequence>
+      <element name="montant" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCompteResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getCountryCodeResponse">
+
+      <wsdl:part element="impl:getCountryCodeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setLastNameResponse">
+
+      <wsdl:part element="impl:setLastNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCodeCountryRequest">
+
+      <wsdl:part element="impl:setCodeCountry" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCompteRequest">
+
+      <wsdl:part element="impl:setCompte" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCodeCountryResponse">
+
+      <wsdl:part element="impl:setCodeCountryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCompteResponse">
+
+      <wsdl:part element="impl:getCompteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastNameRequest">
+
+      <wsdl:part element="impl:getLastName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setFirstNameRequest">
+
+      <wsdl:part element="impl:setFirstName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFirstNameResponse">
+
+      <wsdl:part element="impl:getFirstNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCompteRequest">
+
+      <wsdl:part element="impl:getCompte" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCompteResponse">
+
+      <wsdl:part element="impl:setCompteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFirstNameRequest">
+
+      <wsdl:part element="impl:getFirstName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setLastNameRequest">
+
+      <wsdl:part element="impl:setLastName" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLastNameResponse">
+
+      <wsdl:part element="impl:getLastNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCountryCodeRequest">
+
+      <wsdl:part element="impl:getCountryCode" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setFirstNameResponse">
+
+      <wsdl:part element="impl:setFirstNameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Client">
+
+      <wsdl:operation name="getFirstName">
+
+         <wsdl:input message="impl:getFirstNameRequest" name="getFirstNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFirstNameResponse" name="getFirstNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastName">
+
+         <wsdl:input message="impl:getLastNameRequest" name="getLastNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLastNameResponse" name="getLastNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCountryCode">
+
+         <wsdl:input message="impl:getCountryCodeRequest" name="getCountryCodeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCountryCodeResponse" name="getCountryCodeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFirstName">
+
+         <wsdl:input message="impl:setFirstNameRequest" name="setFirstNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setFirstNameResponse" name="setFirstNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setLastName">
+
+         <wsdl:input message="impl:setLastNameRequest" name="setLastNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setLastNameResponse" name="setLastNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodeCountry">
+
+         <wsdl:input message="impl:setCodeCountryRequest" name="setCodeCountryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCodeCountryResponse" name="setCodeCountryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCompte">
+
+         <wsdl:input message="impl:getCompteRequest" name="getCompteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCompteResponse" name="getCompteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCompte">
+
+         <wsdl:input message="impl:setCompteRequest" name="setCompteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCompteResponse" name="setCompteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ClientSoapBinding" type="impl:Client">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getFirstName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFirstNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFirstNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLastName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLastNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLastNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCountryCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCountryCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCountryCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setFirstName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setFirstNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setFirstNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setLastName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setLastNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setLastNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodeCountry">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCodeCountryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCodeCountryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ClientService">
+
+      <wsdl:port binding="impl:ClientSoapBinding" name="Client">
+
+         <wsdlsoap:address location="http://localhost:8080/ClientWS/services/Client"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

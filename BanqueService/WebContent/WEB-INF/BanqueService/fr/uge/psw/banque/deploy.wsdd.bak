@@ -1,0 +1,34 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BanqueService WSDL service -->
+
+  <service name="Banque" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://banque.psw.uge.fr"/>
+      <parameter name="wsdlServiceElement" value="BanqueService"/>
+      <parameter name="schemaQualified" value="http://banque.psw.uge.fr"/>
+      <parameter name="wsdlServicePort" value="Banque"/>
+      <parameter name="className" value="fr.uge.psw.banque.BanqueSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Banque"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="valeurDuSolde" qname="operNS:valeurDuSolde" xmlns:operNS="http://banque.psw.uge.fr" returnQName="retNS:valeurDuSoldeReturn" xmlns:retNS="http://banque.psw.uge.fr" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="depotDe" qname="operNS:depotDe" xmlns:operNS="http://banque.psw.uge.fr" soapAction="" >
+        <parameter qname="pns:montant" xmlns:pns="http://banque.psw.uge.fr" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="retraitDe" qname="operNS:retraitDe" xmlns:operNS="http://banque.psw.uge.fr" returnQName="retNS:retraitDeReturn" xmlns:retNS="http://banque.psw.uge.fr" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:montant" xmlns:pns="http://banque.psw.uge.fr" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="depotDe valeurDuSolde retraitDe"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ifcarsService.psw.uge.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ifcarsService.psw.uge.fr" xmlns:intf="http://ifcarsService.psw.uge.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ifcarsService.psw.uge.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add">
+    <complexType>
+     <sequence>
+      <element name="marque" type="xsd:string"/>
+      <element name="model" type="xsd:string"/>
+      <element name="id" type="xsd:long"/>
+      <element name="prix" type="xsd:double"/>
+      <element name="nb_location" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addResponse">
+    <complexType>
+     <sequence>
+      <element name="addReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="del">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="delResponse">
+    <complexType>
+     <sequence>
+      <element name="delReturn" type="impl:Car"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Car">
+    <sequence>
+     <element name="ID" type="xsd:long"/>
+     <element name="etat" nillable="true" type="xsd:string"/>
+     <element name="information" nillable="true" type="xsd:string"/>
+     <element name="isRent" type="xsd:boolean"/>
+     <element name="marque" nillable="true" type="xsd:string"/>
+     <element name="model" nillable="true" type="xsd:string"/>
+     <element name="nblocation" type="xsd:int"/>
+     <element name="note" type="xsd:int"/>
+     <element name="prix" type="xsd:double"/>
+    </sequence>
+   </complexType>
+   <element name="setEtat">
+    <complexType>
+     <sequence>
+      <element name="etat" type="xsd:string"/>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEtatResponse">
+    <complexType/>
+   </element>
+   <element name="setNote">
+    <complexType>
+     <sequence>
+      <element name="note" type="xsd:int"/>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNoteResponse">
+    <complexType/>
+   </element>
+   <element name="renduCar">
+    <complexType>
+     <sequence>
+      <element name="etat" type="xsd:string"/>
+      <element name="note" type="xsd:int"/>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="renduCarResponse">
+    <complexType/>
+   </element>
+   <element name="lookModel">
+    <complexType>
+     <sequence>
+      <element name="model" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="lookModelResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="lookModelReturn" type="impl:Car"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listCars">
+    <complexType/>
+   </element>
+   <element name="listCarsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="listCarsReturn" type="impl:Car"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="lookMarque">
+    <complexType>
+     <sequence>
+      <element name="marque" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="lookMarqueResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="lookMarqueReturn" type="impl:Car"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNoteRequest">
+
+      <wsdl:part element="impl:setNote" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="renduCarResponse">
+
+      <wsdl:part element="impl:renduCarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNoteResponse">
+
+      <wsdl:part element="impl:setNoteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="renduCarRequest">
+
+      <wsdl:part element="impl:renduCar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="lookModelResponse">
+
+      <wsdl:part element="impl:lookModelResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listCarsRequest">
+
+      <wsdl:part element="impl:listCars" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="lookModelRequest">
+
+      <wsdl:part element="impl:lookModel" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listCarsResponse">
+
+      <wsdl:part element="impl:listCarsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="delResponse">
+
+      <wsdl:part element="impl:delResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="delRequest">
+
+      <wsdl:part element="impl:del" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="lookMarqueRequest">
+
+      <wsdl:part element="impl:lookMarque" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="lookMarqueResponse">
+
+      <wsdl:part element="impl:lookMarqueResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEtatRequest">
+
+      <wsdl:part element="impl:setEtat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEtatResponse">
+
+      <wsdl:part element="impl:setEtatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SellCar">
+
+      <wsdl:operation name="add">
+
+         <wsdl:input message="impl:addRequest" name="addRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addResponse" name="addResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="del">
+
+         <wsdl:input message="impl:delRequest" name="delRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:delResponse" name="delResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEtat">
+
+         <wsdl:input message="impl:setEtatRequest" name="setEtatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setEtatResponse" name="setEtatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNote">
+
+         <wsdl:input message="impl:setNoteRequest" name="setNoteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNoteResponse" name="setNoteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="renduCar">
+
+         <wsdl:input message="impl:renduCarRequest" name="renduCarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:renduCarResponse" name="renduCarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="lookModel">
+
+         <wsdl:input message="impl:lookModelRequest" name="lookModelRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:lookModelResponse" name="lookModelResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listCars">
+
+         <wsdl:input message="impl:listCarsRequest" name="listCarsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listCarsResponse" name="listCarsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="lookMarque">
+
+         <wsdl:input message="impl:lookMarqueRequest" name="lookMarqueRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:lookMarqueResponse" name="lookMarqueResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SellCarSoapBinding" type="impl:SellCar">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="del">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="delRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="delResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEtat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setEtatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setEtatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNoteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNoteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="renduCar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="renduCarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="renduCarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="lookModel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="lookModelRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="lookModelResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listCars">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listCarsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listCarsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="lookMarque">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="lookMarqueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="lookMarqueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SellCarService">
+
+      <wsdl:port binding="impl:SellCarSoapBinding" name="SellCar">
+
+         <wsdlsoap:address location="http://localhost:8080/IfCars/services/SellCar"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
